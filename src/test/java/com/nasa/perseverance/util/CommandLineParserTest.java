@@ -12,12 +12,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CommandLineUtilTest {
+class CommandLineParserTest {
 
     @Test
     void shouldGetPlateauInputs() {
         String plateauInput = "5 5";
-        Plateau plateau = CommandLineUtil.plateauInputs(plateauInput);
+        Plateau plateau = CommandLineParser.plateauInputs(plateauInput);
         assertEquals(5, plateau.getUpperBoundX());
         assertEquals(5, plateau.getUpperBoundY());
     }
@@ -26,7 +26,7 @@ class CommandLineUtilTest {
     void shouldGetRoverPositionInputs() {
         String position = "1 2 N";
         Plateau plateau = new Plateau(5, 5);
-        MarsRover roverPositionInput = CommandLineUtil.getRoverPositionInput(position, plateau);
+        MarsRover roverPositionInput = CommandLineParser.getRoverPositionInput(position, plateau);
         assertEquals(1, roverPositionInput.getCoordinateX());
         assertEquals(2, roverPositionInput.getCoordinateY());
         assertEquals(Direction.N.name(), roverPositionInput.getDirection().name());
@@ -35,7 +35,7 @@ class CommandLineUtilTest {
     @Test
     void shouldGetCommandInputs() {
         String command = "L";
-        List<Command> commandsInput = CommandLineUtil.getCommandsInput(command);
+        List<Command> commandsInput = CommandLineParser.getCommandsInput(command);
         assertEquals(Commands.L.getCommand(), commandsInput.get(0));
     }
 

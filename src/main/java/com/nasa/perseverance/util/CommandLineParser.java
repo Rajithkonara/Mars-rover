@@ -10,11 +10,11 @@ import com.nasa.perseverance.exception.PerseveranceException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommandLineUtil {
+public class CommandLineParser {
 
     private static final String STRING_SEPARATOR = " ";
 
-    private CommandLineUtil() {
+    private CommandLineParser() {
     }
 
     /**
