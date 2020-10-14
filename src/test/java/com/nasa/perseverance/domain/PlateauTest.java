@@ -1,19 +1,20 @@
 package com.nasa.perseverance.domain;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class PlateauTest {
+
+class PlateauTest {
 
     @Test
-    public void shouldReturnFalseWhenPlateauCoordinatesAreNegative() {
+    void shouldReturnFalseWhenPlateauCoordinatesAreNegative() {
         Plateau plateau = new Plateau(-5, 5);
         assertTrue(plateau.isInvalidCoordinates(plateau.getUpperBoundX(), plateau.getUpperBoundY()));
     }
 
     @Test
-    public void shouldReturnFalseWhenRoverIsOutOfPlateau() {
+    void shouldReturnFalseWhenRoverIsOutOfPlateau() {
         Plateau plateau = new Plateau(5, 5);
         assertTrue(plateau.isInvalidRoverLocation(6, 2));
     }
