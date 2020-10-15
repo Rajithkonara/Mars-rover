@@ -15,8 +15,11 @@ public class PerseveranceApplication {
     private static final String QUIT = "q";
 
     public static void main(String[] args) {
+
+        System.out.println("Please enter the rover instructions ");
         Scanner input = new Scanner(System.in);
         Plateau plateau = CommandLineParser.plateauInputs(input.nextLine());
+
         if (plateau.isInvalidCoordinates(plateau.getUpperBoundX(), plateau.getUpperBoundY())) {
             throw new PerseveranceException("Plateau coordinates should be positive");
         }
@@ -31,6 +34,7 @@ public class PerseveranceApplication {
             roverPositionInput.executeCommands(commandsInput);
             System.out.println(roverPositionInput.getRoverPosition());
         }
+
         System.out.println("Shutting down .....");
         System.exit(1);
     }
