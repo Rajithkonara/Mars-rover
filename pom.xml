@@ -6,7 +6,7 @@
 
     <groupId>com.nasa.perseverance</groupId>
     <artifactId>perseverance</artifactId>
-    <version>1.0-0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>perseverance</name>
     <description>Nasa Mars Rover - Perseverance</description>
 

@@ -20,19 +20,28 @@ All dependencies are available in pom.xml.
 * Rover cannot exceed the plateau.
 * The first input coordinates of plateau will be applied to all the rovers.
 
+## Run the artifact
+
+* The build artifact is in the artifact directory
+* To run the application type 
+
+```
+java -jar artifact/perseverance-1.0.0.jar
+```
+
 ## Build
 ```
 mvn clean install
 ```
 
-## Run
-```
-java -jar target/perseverance-1.0-0-SNAPSHOT.jar
-```
-
-## Test
+## Run tests
 ```
 mvn test
+```
+
+## Run
+```
+java -jar target/perseverance-1.0.0.jar
 ```
 
 ### Reference Documentation
