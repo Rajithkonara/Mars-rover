@@ -12,6 +12,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests for {@link CommandLineParser} class.
+ */
 class CommandLineParserTest {
 
     @Test

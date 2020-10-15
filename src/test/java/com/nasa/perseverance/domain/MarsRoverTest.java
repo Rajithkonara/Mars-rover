@@ -13,6 +13,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests for {@link MarsRover} class.
+ */
 class MarsRoverTest {
 
     protected final Plateau plateau = new Plateau(5, 5);
@@ -75,7 +78,33 @@ class MarsRoverTest {
         marsRover_2.executeCommands(commands);
         assertEquals(1, marsRover_2.getCoordinateX());
         assertEquals(3, marsRover_2.getCoordinateY());
-        assertEquals(Direction.N.name(), marsRover.getDirection().name());
+        assertEquals(Direction.N.name(), marsRover_2.getDirection().name());
+    }
+
+    @Test
+    void shouldExecuteCommandsWithRightTurn() {
+        Plateau plateau = new Plateau(5, 5);
+        int coordinateX = 3;
+        int coordinateY = 3;
+        MarsRover marsRover_2;
+        Direction direction = Direction.E;
+        marsRover_2 = new MarsRover(plateau, coordinateX, coordinateY, direction);
+        //MMRMMRMRRM
+        List<Command> commands = new ArrayList<>();
+        commands.add(0, new Move());
+        commands.add(1, new Move());
+        commands.add(2, new TurnRight());
+        commands.add(3, new Move());
+        commands.add(4, new Move());
+        commands.add(5, new TurnRight());
+        commands.add(6, new Move());
+        commands.add(7, new TurnRight());
+        commands.add(8, new TurnRight());
+        commands.add(9, new Move());
+        marsRover_2.executeCommands(commands);
+        assertEquals(5, marsRover_2.getCoordinateX());
+        assertEquals(1, marsRover_2.getCoordinateY());
+        assertEquals(Direction.E.name(), marsRover_2.getDirection().name());
     }
 
 
